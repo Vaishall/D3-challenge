@@ -110,7 +110,7 @@ function init() {
 		.attr("x", chartWidth/2)
 		.attr("y", chartHeight + 40)
 		.attr("value", "xaxis")
-		.text(chosenX);
+		.text(chosenX.charAt(0).toUpperCase()+chosenX.slice(1));
 
 		yLabel = chartGroup.append("text")
 		.attr("transform", "rotate(-90)")
@@ -118,7 +118,7 @@ function init() {
 		.attr("y", 0-margin.left)
 		.attr("dy", "1em")
 		.attr("value", "yaxis")
-		.text(chosenY);
+		.text(chosenY.charAt(0).toUpperCase()+chosenY.slice(1));
 
 
 		//create tooltips
@@ -145,7 +145,7 @@ function optionChangedX(variable) {
 			return "translate (" + d.x + ',' + d.y + ')';
 		});
 
-		xLabel['_groups'][0][0].innerHTML = variable;
+		xLabel['_groups'][0][0].innerHTML = chosenX.charAt(0).toUpperCase()+chosenX.slice(1);
 		tooltips(nodes, chosenX, chosenY);
 	}
 }
@@ -166,7 +166,7 @@ function optionChangedY(variable) {
 			return "translate (" + d.x + ',' + d.y + ')';
 		});
 
-		yLabel['_groups'][0][0].innerHTML = variable;
+		yLabel['_groups'][0][0].innerHTML = chosenY.charAt(0).toUpperCase()+chosenY.slice(1);
 		tooltips(nodes, chosenX, chosenY);
 	}
 }
